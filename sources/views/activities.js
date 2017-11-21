@@ -17,9 +17,10 @@ var grid =
 	columns:[
 		{id:"id", header:" ", width:35, template:"<span  class='webix_icon_btn fa-square-o'></span>"},
 		
-		{id:"Details", header:["Details", {content:"selectFilter"} ], sort:"string", minWidth:120, fillspace: 2, editor:"text",  template:"<div class='category#activitytypes#'>#activitytypes#</div>"},
+		{id:"activitytypes", header:["Activity type", {content:"selectFilter"} ], sort:"string", minWidth:120, fillspace: 2, editor:"text",  template:"<div class='category#activitytypes#'>#activitytypes#</div>"},
 		{id:"DueDate", header:["Due date", {content:"textFilter"} ], sort:"string", minWidth:80, fillspace: 1},
-		{id:"name", header:["Name", {content:"textFilter"} ], sort:"string", minWidth:120, fillspace: 2, editor:"text"},
+		{id:"Details", header:["Details", {content:"textFilter"} ], sort:"string", minWidth:80, fillspace: 1},
+		{id:"Contact", header:["Contact", {content:"selectFilter"} ], sort:"string", minWidth:120, fillspace: 2, editor:"text"},
 
 		{id:"edit", header:"&nbsp;", width:35, template:"<span  style=' cursor:pointer;' class='webix_icon fa-pencil'></span>"},
 		{id:"delete", header:"&nbsp;", width:35, template:"<span  style='cursor:pointer;' class='webix_icon fa-trash-o'></span>"}
