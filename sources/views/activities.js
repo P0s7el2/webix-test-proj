@@ -1,44 +1,28 @@
 import {JetView} from "webix-jet";
-import {data} from "models/records";
+import grid from "views/subviews/activities/activities_grid";
+//import {popup} from "views/subviews/activities/activities_popup";
 
-export default class DataView extends JetView{
+export default class Activities extends JetView {
 	config(){
-		return grid;
-	}
-	init(view){
-		//view.parse(data);
+		var open_activity = {
+			view: "button",
+			type: "iconButton",
+			icon: "plus-square",
+			label: "Add Activity",
+			width: 130,
+			click:() => popup
+		};
+
+		var activities = {
+			rows: [
+				{
+					cols: [
+						{}, open_activity
+					]
+				},
+				grid
+			]
+		};
+		return activities;
 	}
 }
-
-var grid = 
-{
-	id:"productsData",
-	view:"datatable", select:true, editable:true, editaction:"dblclick",
-	columns:[
-		{id:"id", header:" ", width:35, template:"<span  class='webix_icon_btn fa-square-o'></span>"},
-		
-		{id:"activitytypes", header:["Activity type", {content:"selectFilter"} ], sort:"string", minWidth:120, fillspace: 2, editor:"text",  template:"<div class='category#activitytypes#'>#activitytypes#</div>"},
-		{id:"DueDate", header:["Due date", {content:"textFilter"} ], sort:"string", minWidth:80, fillspace: 1},
-		{id:"Details", header:["Details", {content:"textFilter"} ], sort:"string", minWidth:80, fillspace: 1},
-		{id:"Contact", header:["Contact", {content:"selectFilter"} ], sort:"string", minWidth:120, fillspace: 2, editor:"text"},
-
-		{id:"edit", header:"&nbsp;", width:35, template:"<span  style=' cursor:pointer;' class='webix_icon fa-pencil'></span>"},
-		{id:"delete", header:"&nbsp;", width:35, template:"<span  style='cursor:pointer;' class='webix_icon fa-trash-o'></span>"}
-	],
-
-	onClick:{
-		"fa-trash-o":function(e,id){
-			webix.confirm({
-				text:"The product will be deleted. <br/> Are you sure?", ok:"Yes", cancel:"Cancel",
-				callback:(res) => {
-					// if(res){
-					// 	const item = this.getItem(id);
-					// 	item.status = "0";
-					// 	item.statusName = "Deleted";
-					// 	this.refresh(id);
-					}
-				}
-			});
-		}
-	},
-};

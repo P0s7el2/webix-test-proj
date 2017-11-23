@@ -6,7 +6,8 @@ webix.ready(() => {
 	var app = new JetApp({
 		id:			APPNAME,
 		version:	VERSION,
-		start:		"/top/start"
+		start:		"/top/contacts",
+		debug: true
 	});
 	app.render();
 

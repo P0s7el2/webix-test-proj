@@ -6,3 +6,11 @@ background: blue;
 float: left;
 margin: 5px;
 }
+
+.contactimg {
+border-radius: 2px;
+width: 150px;
+height: 150px;
+background: blue;
+margin: 5px;
+}

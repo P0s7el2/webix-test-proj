@@ -1,5 +1,5 @@
 import {JetView} from "webix-jet";
-import {data} from "models/records";
+import { contacts_data } from "models/data_contacts";
 
 export default class Contacts_list extends JetView {
 	config()
@@ -10,12 +10,14 @@ export default class Contacts_list extends JetView {
 			id: "contact_list",
 			select: true,
 			
-			template:"<img class='round' src='#image#'> <b>#name#</b> <br> #company#",
-			type:{
-				width:300,
-				height:"auto",
+			template: "<img class='round' src='#Photo#'> <b>#FirstName# #LastName#</b> <br> #Company#",
+			type: 
+			{
+				width: 300,
+				height: "auto",
 			},
-			on:{
+			on: 
+				{
 				onAfterSelect:function(id){
 					this.$scope.app.callEvent("contactSelected",  [id]);
 				}
@@ -24,6 +26,6 @@ export default class Contacts_list extends JetView {
 		return contacts_list;
 	}
 	init(view){
-		view.parse(data);		
+		view.parse(contacts_data);		
 	}
 }
