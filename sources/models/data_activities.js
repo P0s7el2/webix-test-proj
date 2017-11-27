@@ -7,16 +7,13 @@ export function getData() {
   return data_activities;
 }
 
-export function getDataItem(id) {
-  return data_activities.getItem(id)
+export function getActivitiesItem(id) {
+  return data_activities.getItem(id);
 }
 
-export function addActivity(obj) {
-  data_activities.add(obj)
-}
-
-export function editActivity(id, obj) {
-  data_activities.update(id, obj);
+export function setActivities(id, data){ 
+  if (!id){data_activities.add(data);}
+  else{data_activities.updateItem(id, data);}
 }
 
 export function removeActivity(id) {

@@ -14,3 +14,25 @@ height: 150px;
 background: blue;
 margin: 5px;
 }
+
+#content {
+ position:relative;
+}
+ 
+#div-main {
+
+ width:200px;
+ float:left;
+}
+ 
+#div-description {
+
+ width:200px;
+ float:left;
+}
+
+.user-column {
+
+ width:200px;
+ float:left;
+}

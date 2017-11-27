@@ -7,7 +7,6 @@ export default class Contacts_list extends JetView {
 		var contacts_list = 
 		{
 			view: "list",
-			id: "contact_list",
 			select: true,
 			
 			template: "<img class='round' src='#Photo#'> <b>#FirstName# #LastName#</b> <br> #Company#",
@@ -26,6 +25,10 @@ export default class Contacts_list extends JetView {
 		return contacts_list;
 	}
 	init(view){
-		view.parse(contacts_data);		
+		view.parse(contacts_data);
+		contacts_data.waitData.then(function(){
+			view.select(view.getFirstId());
+		});
+		//all
 	}
 }

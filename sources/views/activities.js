@@ -1,28 +1,35 @@
 import {JetView} from "webix-jet";
 import grid from "views/subviews/activities/activities_grid";
-//import {popup} from "views/subviews/activities/activities_popup";
+import ActivityPopup from "views/subviews/activities/activities_popup";
 
 export default class Activities extends JetView {
 	config(){
-		var open_activity = {
+		var open_activity_popup = {
 			view: "button",
 			type: "iconButton",
 			icon: "plus-square",
 			label: "Add Activity",
 			width: 130,
-			click:() => popup
+			click:() => this.ActivityPopup.showWindow()
 		};
 
 		var activities = {
 			rows: [
 				{
 					cols: [
-						{}, open_activity
+						{}, open_activity_popup
 					]
 				},
 				grid
 			]
 		};
 		return activities;
+	}
+
+	init(){
+		this.ActivityPopup = this.ui(ActivityPopup);
+		this.on(this.app, "callWindow", (id) => {
+			this.ActivityPopup.showWindow(id);
+		});
 	}
 }
