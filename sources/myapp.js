@@ -1,4 +1,4 @@
-import "./styles/app.css";
+
 import "./styles/ext.css";
 import {JetApp} from "webix-jet";
 

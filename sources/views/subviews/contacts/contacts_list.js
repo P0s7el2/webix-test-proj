@@ -9,7 +9,14 @@ export default class Contacts_list extends JetView {
 			view: "list",
 			select: true,
 			
-			template: "<img class='round' src='#Photo#'> <b>#FirstName# #LastName#</b> <br> #Company#",
+			template: function(item){
+				var str = "";
+				(item.Photo) ? str += "<img class='round' src='"+item.Photo+"'>" : str += "<span class = 'average_icon icons webix_icon fa-user-circle'></span>";
+				if(item.FirstName || item.LastName) str += "<b>"+item.FirstName+" "+item.LastName+"</b> <br>";
+				else if(item.Email) str += item.Email;
+				if(item.Company) str += item.Company;
+				return str;
+			},
 			type: 
 			{
 				width: 300,
@@ -17,8 +24,8 @@ export default class Contacts_list extends JetView {
 			},
 			on: 
 				{
-				onAfterSelect:function(id){
-					this.$scope.app.callEvent("contactSelected",  [id]);
+				onAfterSelect: (id) => {
+					this.app.callEvent("contactSelected",  [id]);
 				}
 			}
 		};
@@ -29,6 +36,5 @@ export default class Contacts_list extends JetView {
 		contacts_data.waitData.then(function(){
 			view.select(view.getFirstId());
 		});
-		//all
 	}
 }

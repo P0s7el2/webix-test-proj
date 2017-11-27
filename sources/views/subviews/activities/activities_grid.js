@@ -68,17 +68,17 @@ export default class ActivitiesGrid extends JetView {
 		view.parse(getData());
 
 		getActivityOptions().then( function (opts)
-			{
+		{
 
-				$$("productsData").getColumnConfig("TypeID").collection = opts;
-				$$("productsData").refreshColumns();
-			});
-	
+			view.getColumnConfig("TypeID").collection = opts;
+			view.refreshColumns();
+		});
+
 	getContactsOptions().then( function (opts)
-			{
+		{
 
-				$$("productsData").getColumnConfig("ContactID").collection = opts;
-				$$("productsData").refreshColumns();
-			});
+			view.getColumnConfig("ContactID").collection = opts;
+			view.refreshColumns();
+		});
 	}
 }

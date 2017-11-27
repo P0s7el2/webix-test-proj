@@ -1,38 +1,44 @@
 .round {
-border-radius: 25px;
-width: 50px;
-height: 50px;
-background: blue;
-float: left;
-margin: 5px;
+	border-radius: 25px;
+	width: 50px;
+	height: 50px;
+	background: blue;
+	float: left;
+	margin: 5px;
 }
 
 .contactimg {
-border-radius: 2px;
-width: 150px;
-height: 150px;
-background: blue;
-margin: 5px;
+	border-radius: 2px;
+	width: 150px;
+	height: 150px;
+	background: blue;
+	margin: 5px;
 }
 
-#content {
- position:relative;
-}
  
-#div-main {
-
- width:200px;
- float:left;
-}
- 
-#div-description {
-
- width:200px;
- float:left;
+.big_icon{
+	font-size: 150px;
+	width:	150px;
+	height: 150px;
+	margin: 5px;
 }
 
-.user-column {
+.average_icon{
+	font-size: 50px;
+	width:	50px;
+	height: 50px;
+	margin: 5px;
+	float: left;
+}
 
- width:200px;
- float:left;
+.contact-templ {
+	display: inline-block;
+}
+
+.field {
+	margin:8px;
+}
+
+.status {
+	text-align: center;
 }
