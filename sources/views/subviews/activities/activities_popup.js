@@ -33,7 +33,7 @@ export default class ActivityPopup extends JetView{
 				{label: "Completed", name: "State", view: "checkbox", width: 120, labelWidth: 100, checkValue: "Close", uncheckValue: "Open"},
 				{cols: [
 					{view: "button", type: "iconButton", icon: "plus", label: "Add (*save)", click:() => {this.addActivity()}},
-					{view: "button", type: "iconButton", icon: "edit", label: "Cancel",  click() {this.$scope.closePopup()} }
+					{view: "button", type: "iconButton", icon: "edit", label: "Cancel",  click:() => {this.closePopup()} }
 				]}
 			],
 			rules: {
