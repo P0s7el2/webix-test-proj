@@ -1,4 +1,4 @@
-Webix Jet Demo App
+Webix Test project
 ===================
 
 ### How to run
