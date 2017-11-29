@@ -1,5 +1,5 @@
 import {JetView} from "webix-jet";
-import {getState} from "models/data_activities_types";
+import {data_activities_types} from "models/data_activities_types";
 import {data_contacts} from "models/data_contacts";
 import {data_activities} from "models/data_activities";
 
@@ -15,9 +15,9 @@ export default class ActivityPopup extends JetView {
 				{view: "richselect",
 					label: "Type",
 					name: "TypeID",
-
-					options: {
-						data: getState()
+					data: data_activities_types,
+					body:{
+						template: "#Value#"
 					}
 				},
 				{view: "richselect",
