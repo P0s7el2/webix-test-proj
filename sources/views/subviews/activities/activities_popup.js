@@ -15,9 +15,12 @@ export default class ActivityPopup extends JetView {
 				{view: "richselect",
 					label: "Type",
 					name: "TypeID",
-					data: data_activities_types,
-					body:{
-						template: "#Value#"
+
+					options: {
+						data: data_activities_types,
+						body: {
+							template: "#Value#"
+						}
 					}
 				},
 				{view: "richselect",

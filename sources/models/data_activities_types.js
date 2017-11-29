@@ -1,12 +1,12 @@
-export const data_ActivitiesTypes = new webix.DataCollection({
+export const data_activities_types = new webix.DataCollection({
 	url: "http://localhost:8096/api/v1/activitytypes/",
 	save: "rest->http://localhost:8096/api/v1/activitytypes/"
 });
 
 export function getActivityOptions() {
-	return data_ActivitiesTypes.waitData.then(() => {
+	return data_activities_types.waitData.then(() => {
 		let options = [];
-		data_ActivitiesTypes.data.each(
+		data_activities_types.data.each(
 			(obj) => {
 				options.push(
 					{

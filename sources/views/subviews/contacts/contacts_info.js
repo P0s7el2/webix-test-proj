@@ -59,9 +59,7 @@ export default class Contacts_info extends JetView {
 		{
 			cols:
 			[
-				{
-					rows: [contact_templ]
-				},
+				contact_templ,
 				contact_edit
 			]
 		};
