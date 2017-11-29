@@ -3,17 +3,17 @@ import grid from "views/subviews/activities/activities_grid";
 import ActivityPopup from "views/subviews/activities/activities_popup";
 
 export default class Activities extends JetView {
-	config(){
-		var open_activity_popup = {
+	config() {
+		let open_activity_popup = {
 			view: "button",
 			type: "iconButton",
 			icon: "plus-square",
 			label: "Add Activity",
 			width: 130,
-			click:() => this.ActivityPopup.showWindow()
+			click: () => this.ActivityPopup.showWindow()
 		};
 
-		var activities = {
+		let activities = {
 			rows: [
 				{
 					cols: [
@@ -26,7 +26,7 @@ export default class Activities extends JetView {
 		return activities;
 	}
 
-	init(){
+	init() {
 		this.ActivityPopup = this.ui(ActivityPopup);
 		this.on(this.app, "callWindow", (id) => {
 			this.ActivityPopup.showWindow(id);

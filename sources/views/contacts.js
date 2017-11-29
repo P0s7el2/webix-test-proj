@@ -3,13 +3,12 @@ import contacts_list from "views/subviews/contacts/contacts_list";
 import contacts_info from "views/subviews/contacts/contacts_info";
 
 export default class Contacts extends JetView {
-	config()
-	{
+	config() {
 		return contacts;
 	}
 }
 
-var contacts = 
+let contacts =
 {
-	cols:[contacts_list,contacts_info]
+	cols: [contacts_list, contacts_info]
 };
